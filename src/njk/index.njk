@@ -1,11 +1,26 @@
+
 {% extends '_templates/base.njk' %}
 {% block page_title %}Capt. McGillicutty's Ship's Log{% endblock %}
 {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-8 offset-md-2">
       <h1>A pirate's life is for me</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium porro quidem vitae iste illum voluptatibus. Iusto repellat, sint ab ex fuga asperiores quis facilis sunt sapiente magni necessitatibus enim atque.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis aliquam necessitatibus veniam fugiat ut eum culpa ex nobis? Esse explicabo velit accusantium ab. Tempore sed mollitia aperiam nostrum dolores voluptatibus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, enim inventore. Ipsum blanditiis voluptas atque laborum id quos ut, sequi tempora numquam, possimus vitae voluptatem inventore, similique nam quam est!</p>
+    </div>
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      {% for blogs in blog.blogs %}
+      <div class="row">
+    <div class="card bg-light">
+      <div class="card-body">
+        <h5 class="card-title">{{blogs.headline}}</h5>
+        <p class="card-text">{{blogs.date}}</p>
+        <a href= "blog/{{blogs.slug}}.html">Read More!</a>
+      </div>
+    </div>
+  </div>
+      {%endfor%}
     </div>
   </div>
 </div>
